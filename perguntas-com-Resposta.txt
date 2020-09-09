@@ -1,0 +1,42 @@
+1)	Apresentar os nomes dos alunos em ordem alfabética.
+SELECT nomeAluno FROM alunos order by nomeAluno
+SELECT nomeAluno FROM alunos order by nomeAluno DESC
+
+2)	Apresentar os nomes dos alunos e a soma das 3 notas.
+SELECT nomeAluno, SUM(notaTrimestre1 + notaTrimestre2 + notaTrimestre3) As totalNotas  FROM alunos GROUP BY nomeAluno 
+
+3)	Apresentar os nomes dos alunos e a média das notas.
+SELECT nomeAluno, SUM(notaTrimestre1 + notaTrimestre2 + notaTrimestre3)/3 As `média`  FROM alunos GROUP BY nomeAluno 
+
+4)	Apresentar a quantos dias cada aluno esta matriculado.
+SELECT nomeAluno, DATEDIFF( NOW( ) , dataMatricula ) AS tempoMatricula
+FROM alunos
+
+5)	Apresentar quantos dias faz que o último aluno matriculou-se.
+SELECT nomeAluno, DATEDIFF( NOW( ) , dataMatricula ) AS tempoMatricula
+FROM alunos ORDER BY tempoMatricula LIMIT 1
+
+6)	Apresentar todos os níveis de ensino cujo orçamento anual seja maior que 15000,
+SELECT (
+orcamentoMensal *12
+) AS 'orcamentoAnual'
+FROM `nivelensinos`
+WHERE orcamentoMensal *12 >=15000
+LIMIT 0 , 30
+
+7)	Apresente todas as matérias existentes na escola, porém omita eventuais duplicidades.
+SELECT DISTINCT(materia) FROM `professores`
+
+8)	Apresente o nome de todos os professores em letras minúsculas, depois em letras maiúsculas.
+SELECT UPPER(nomeProfessor),LOWER(nomeProfessor) FROM `professores`
+
+9)	Apresente o nome de todos os professores (somente as 5 primeiras letras).
+SELECT substring(nomeProfessor,1,5) FROM `professores`
+
+10)	Apresente a Média, o Maior, o Menor dos Salários pagos aos professores.
+SELECT MAX( salario ) AS Maior, AVG( salario ) AS Media, MIN( salario ) AS Menor from professores
+
+11)	Apresente a média de salário pago por nível de ensino.
+SELECT AVG( salario ) 
+FROM professores
+GROUP BY nivelEnsinoFK

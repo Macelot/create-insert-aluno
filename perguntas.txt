@@ -1,0 +1,13 @@
+https://1drv.ms/u/s!Ap_hcpWFcKorh0X0IyR6fFNWxlr8?e=l0Bz56
+
+1)	Apresentar os nomes dos alunos em ordem alfabética.
+2)	Apresentar os nomes dos alunos e a soma das 3 notas. Usar GROUP BY
+3)	Apresentar os nomes dos alunos e a média das notas. Usar GROUP BY
+4)	Apresentar a quantos dias cada aluno esta matriculado. Usar DATEDIFF e NOW 
+5)	Apresentar quantos dias faz que o último aluno matriculou-se. Usar ORDER BY e LIMIT 1
+6)	Apresentar todos os níveis de ensino (descrição e orçamentoMensal) cujo orçamento anual seja maior que 15000. Usar WHERE
+7)	Apresente todas as matérias existentes na escola, porém omita eventuais duplicidades. Usar DISTINCT
+8)	Apresente o nome de todos os professores em letras minúsculas e em letras maiúsculas. Usar UPPER e LOWER
+9)	Apresente o nome de todos os professores (somente as 5 primeiras letras). Usar SUBSTRING(texto,ini,fim)
+10)	Apresente a Média, o Maior, o Menor dos Salários dos professores. Usar AGV, MAX, MIN 
+11)	Apresente a média de salário pago por nível de ensino. Usar AVG e GROUP BY
